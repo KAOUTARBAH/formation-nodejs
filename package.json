@@ -4,13 +4,15 @@
   "description": "Créer son repository github \r créer un nouveau repository formation-nodejs.",
   "main": "index.js",
   "scripts": {
-      "compiler:typescript":"npx tsc --watch"
+    "compiler:typescript": "npx tsc --watch",
+    "compiler2:typescript": "npx nodemon dist/index.js"
   },
   "author": "",
   "license": "ISC",
   "keywords": [],
   "devDependencies": {
     "@types/node": "^18.14.2",
+    "nodemon": "^2.0.20",
     "typescript": "^4.9.5"
   }
 }
