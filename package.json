@@ -5,13 +5,15 @@
   "main": "index.js",
   "scripts": {
     "compilerwatch:typescript": "npx tsc --watch",
-    "compilernodemon:typescript": "npx nodemon dist/index.js"
+    "compilernodemon:typescript": "npx nodemon dist/index.js",
+    "start:app":"npx concurrently npm:compilerwatch:typescript npm:compilernodemon:typescript"
   },
   "author": "",
   "license": "ISC",
   "keywords": [],
   "devDependencies": {
     "@types/node": "^18.14.2",
+    "concurrently": "^7.6.0",
     "nodemon": "^2.0.20",
     "typescript": "^4.9.5"
   }
