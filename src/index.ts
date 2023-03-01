@@ -5,7 +5,7 @@ import fastify from "fastify";
 
 const app = fastify()
 app.listen({port:process.env.PORT as any, host:process.env.HOST},()=>{
-    console.log("le serveur http est pret sur l'adresse http:127.0.0.1:4646")
+    console.log(`le serveur http est pret sur l'adresse http:${process.env.HOST}:${process.env.PORT}`)
 })
 
 
