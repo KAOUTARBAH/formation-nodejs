@@ -26,13 +26,9 @@ app.get('/hello', () => {
 //Utiliser des variables d'environement pour le port et le host de votre serveur ...
 app.get('/variable', () => {
     console.log(process.env.HOST)
-    process.env.HOST
-    process.env.PORT
-    return (process.env.HOST)
-    
-       
-     
-    
+    const HOST=process.env.HOST
+    const PORT=process.env.PORT
+    return [HOST,PORT]
   })
 
 
