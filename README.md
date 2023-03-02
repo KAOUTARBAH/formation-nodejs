@@ -82,3 +82,15 @@ Ajouter un fichier calculatrice.ts dans le dossier src/routes
 Placez toutes les routes concernant la calculatrice dans un plugin du fichier calculatrice.ts
 Branchez votre plugin dans le fichier index.ts (vous pouvez supprimer les routes concernant la calculatrice)
 Tester puis publié sur github
+
+
+# Exercice MongoDB
+##Enregistrer et mémoriser les résultat de notre calculatrice !
+Dans le plugin des calculatrice src/routes/calculatrice.ts
+
+Il vous faut au préalable une base de données mongodb ATLAS
+
+Installer et le plugin mongodb
+Enregistrer et configurer le plugin mongodb dans src/index.ts
+Dans toutes les routes du plugin src/routes/calculatrice.ts, enregistré le retour de la fonction dans une collection mongodb nommé calculatrices
+(BONUS) Créer une routes /calculatrice/results qui retourne tout les résultats enregistré dans mongodb

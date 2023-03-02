@@ -1,11 +1,39 @@
 //Dans le fichier index.ts, créé une application fastify qui
 //écoute sur votre machine, sur le port 4646
 
+import fastifyMongodb from "@fastify/mongodb";
 import fastify from "fastify";
 import fp  from "fastify-plugin";
 import CalculateRoute from "./routes/calculate";
 
 const app = fastify();
+
+
+// Route testant mongodb
+app.get('/testmongo', async () => {
+  await app.mongo.db?.collection('tests').insertOne({
+    message: 'coucou les amis',
+  })
+
+  return 'Mongodb à un nouveau document !'
+})
+
+/**
+ * On initialize une connection à la base de données
+ */
+
+app.register(fastifyMongodb, {
+  // Nous devons spécifier l'url de connnection à la base de données
+  url: 'mongodb+srv://kaoutar:kaoutar@kaoutarbd.lhc1qvw.mongodb.net/?retryWrites=true&w=majority',
+  // Nous devons aussi spécifier la base de données :
+  database: 'Mybdcalc',
+})
+
+
+
+
+
+
 app.listen({ port: process.env.PORT as any, host: process.env.HOST }, () => {
   console.log(
     `le serveur http est pret sur l'adresse http:${process.env.HOST}:${process.env.PORT}`
@@ -22,6 +50,8 @@ app.get("/", () => {
 });
 
 app.get("/hello", () => {
+
+  
   return "Bonjour tout le monde";
 });
 
