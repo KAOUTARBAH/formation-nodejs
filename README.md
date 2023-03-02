@@ -27,14 +27,14 @@ GET /hello: Qui retourne la chaine de caractère Bonjour tout le monde
 Utiliser des variables d'environement pour le port et le host de votre serveur ...
 L'objéctif de l'exercice 4 est de rendre configurable pour Alban le host et le port de notre serveur !
 
-#Tester votre server
+# Tester votre server
 Créer une fichier request.http à la racine de votre projet afin de pouvoir tester notre server
 Dans ce fichier écrivez une request en méthode GET sur la page d'acceuil de notre server
 Toujours dans ce fichier, écrivez une seconde requête pour la resource /hello sur notre serveur
 Envoyé chacune des requêtes assurez-vous que tout fonctionne
 Commit sur gitub et de partager le lien github
 
-#Le format json et la réponse
+# Le format json et la réponse
 Dans le fichier index.ts, créer une route : /eleves qui retourne le tableaux suivant :
 id	nom	prenom	age
 1	john	john	32
@@ -49,7 +49,7 @@ Tester votre route en utilusant le fichier request.http
 Faite un commit, pousser sur github et envoyer le lien github sur le chat !
 
 
-#La calculatrice !
+# La calculatrice !
 Dans le fichier index.ts, réaliser les routes suivantes :
 
 L'addition
@@ -75,7 +75,7 @@ Cette route accépte aussi des données JSON dans son body, ces données doivent
   "y": 26
 }
 
-#Le plugin calulcatrice
+# Le plugin calulcatrice
 Installer fastify plugin
 Créer un dossier dans src/ nommé routes
 Ajouter un fichier calculatrice.ts dans le dossier src/routes
