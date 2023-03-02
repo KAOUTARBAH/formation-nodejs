@@ -2,7 +2,8 @@
 //écoute sur votre machine, sur le port 4646
 
 import fastify from "fastify";
-import { request } from "http";
+import fp  from "fastify-plugin";
+import CalculateRoute from "./routes/calculate";
 
 const app = fastify();
 app.listen({ port: process.env.PORT as any, host: process.env.HOST }, () => {
@@ -86,6 +87,29 @@ response.header('Developed-With', 'fastify')
   
   
   const tableEleve:eleve[]=[john,rose,jane,jean]
-  return [tableEleve[0].id, tableEleve[0].nom, tableEleve[0].prenom, tableEleve[0].age];
-  
+  //return [tableEleve[0].id, tableEleve[0].nom, tableEleve[0].prenom, tableEleve[0].age];
+  return tableEleve
 })
+
+
+ // Route retournant des éléves (exercice)
+ app.get('/eleves23', (request, response) => {
+  response.header('Developed-With', 'Fastify')
+
+  return [
+    { id: 1, nom: 'John', prenom: 'john', age: 32 },
+    { id: 2, nom: 'rose', prenom: 'john', age: 36 },
+    { id: 3, nom: 'jane', prenom: 'john', age: 40 },
+    { id: 4, nom: 'jean', prenom: 'john', age: 38 },
+  ]
+})
+
+
+
+
+
+
+//creation app fastify
+//const app= fastify()
+// nous pouvons connecter notre pligin
+app.register(fp(CalculateRoute))

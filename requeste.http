@@ -9,3 +9,50 @@ GET http://127.0.0.1:4646/test
 ###
 
 GET http://127.0.0.1:4646/eleves
+###
+GET http://127.0.0.1:4646/eleves23
+###
+GET http://127.0.0.1:4646/calc/add/10/7
+
+###
+GET http://127.0.0.1:4646/calc/sub/10/7
+###
+GET http://127.0.0.1:4646/calc/mul/10/7
+###
+GET http://127.0.0.1:4646/calc/div/10/0
+###
+POST  http://127.0.0.1:4646/calculate
+operation : add
+Content-Type: application/json
+
+{
+    "x":10,
+    "y":20
+}
+###
+POST  http://127.0.0.1:4646/calculate
+operation : sub
+Content-Type: application/json
+
+{
+    "x":100,
+    "y":20
+}
+###
+POST  http://127.0.0.1:4646/calculate
+operation : mul
+Content-Type: application/json
+
+{
+    "x":100,
+    "y":20
+}
+###
+POST  http://127.0.0.1:4646/calculate
+operation : div
+Content-Type: application/json
+
+{
+    "x":10,
+    "y":0
+}
